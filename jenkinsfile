@@ -1,0 +1,31 @@
+pipeline {
+
+    agent any //indica dónde lo vamos a ejecutar, no lo restringimos
+
+    stages { //etapas del pipeline
+ 
+        stage("build") { //etapa de build
+            steps { //pasos de la etapa
+                script {
+                   echo 'buiding the application' //mensaje en el log
+                }
+            }
+        }
+
+        stage("test") {
+            steps {
+                script {
+                    echo 'testing the application'
+                }
+            }
+        }
+
+        stage("deploy") {
+            steps {
+                script {
+                    echo 'deploying the application'
+                }
+            }
+        }
+    }   
+}
